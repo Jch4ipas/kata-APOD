@@ -2,11 +2,11 @@ const urlParams = new URLSearchParams(window.location.search);
 const myDate = urlParams.get('date');
 let date = new Date();
 
-if  (myDate != undefined){
+if (myDate != undefined) {
     date = new Date(myDate);
 }
 
-function updateinfo(myDate){
+function updateinfo(myDate) {
     console.log(myDate)
     // Define the API URL
 const apiUrl = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=' + new Date(myDate).toISOString().split('T')[0];;
@@ -45,6 +45,7 @@ fetch(apiUrl)
     document.getElementById("image-date").innerHTML = data.date
     document.getElementById("description").innerHTML = data.explanation
     document.getElementById("image-title").innerHTML = data.title
+      document.getElementById("copyright").innerHTML = data.copyright
 
 })
   .catch(error => {
@@ -52,11 +53,11 @@ fetch(apiUrl)
   });
 }
 
-function previousDay(){
-    updateinfo(date.setDate(date.getDate()-1))
+function previousDay() {
+  updateinfo(date.setDate(date.getDate() - 1))
 }
-function tomorrowDay(){
-    updateinfo(date.setDate(date.getDate()+1))
+function tomorrowDay() {
+  updateinfo(date.setDate(date.getDate() + 1))
 }
 
 updateinfo(date)
