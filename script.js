@@ -37,6 +37,12 @@ fetch(apiUrl)
     btn = document.getElementById("LA");
     console.log(btn)
       btn.addEventListener("click", previousDay);
+      if (date < todayDate) {
+        document.getElementById("RA").style.display = 'inline';
+      }
+      else {
+        document.getElementById("RA").style.display = 'none';
+      }
       let btn1 = document.getElementById("RA");
     console.log(btn)
         btn1.addEventListener("click", tomorrowDay);
