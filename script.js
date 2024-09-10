@@ -1,16 +1,15 @@
 const urlParams = new URLSearchParams(window.location.search);
-const myDate = urlParams.get('date');
-let date = new Date();
-
-if (myDate != undefined) {
-    date = new Date(myDate);
+var paramDate = urlParams.get('date');
+const todayDate = new Date();
+if (date == null) {
+  date = new Date(todayDate);
 }
 
-function updateinfo(myDate) {
-    console.log(myDate)
-    // Define the API URL
-const apiUrl = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=' + new Date(myDate).toISOString().split('T')[0];;
+function updateinfo(date) {
 
+    // Define the API URL
+  window.history.pushState("", "title", "/index.html?date=" + new Date(date).toISOString().split('T')[0]);
+  const apiUrl = 'https://api.nasa.gov/planetary/apod?api_key=sQhjTNqxcjbMFgCyJ8A5rFMHM9gfE18UqGKKt3VP&date=' + new Date(ate).toISOString().split('T')[0];
 // Make a GET request
 fetch(apiUrl)
   .then(response => {
@@ -55,10 +54,11 @@ fetch(apiUrl)
 }
 
 function previousDay() {
-  updateinfo(date.setDate(date.getDate() - 1))
+  date.setDate(date.getDate() - 1);
+  updateinfo(date);
 }
 function tomorrowDay() {
-  updateinfo(date.setDate(date.getDate() + 1))
+  date.setDate(date.getDate() + 1);
+  updateinfo(date)
 }
-
-updateinfo(date)
+updateinfo(date);
