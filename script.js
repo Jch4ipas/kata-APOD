@@ -46,6 +46,7 @@ fetch(apiUrl)
     document.getElementById("description").innerHTML = data.explanation
     document.getElementById("image-title").innerHTML = data.title
       document.getElementById("copyright").innerHTML = data.copyright
+      document.getElementById("linkimage").href = data.hdurl
 
 })
   .catch(error => {
