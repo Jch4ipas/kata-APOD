@@ -1,5 +1,5 @@
 const urlParams = new URLSearchParams(window.location.search);
-var paramDate = urlParams.get('date');
+var date = urlParams.get('date');
 const todayDate = new Date();
 if (date == null) {
   date = new Date(todayDate);
