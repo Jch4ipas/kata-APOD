@@ -8,7 +8,7 @@ if (date == null) {
 function updateinfo(date) {
 
     // Define the API URL
-  window.history.pushState("", "title", "/index.html?date=" + new Date(date).toISOString().split('T')[0]);
+  window.history.pushState("", "title", "kata-APOD/index.html?date=" + new Date(date).toISOString().split('T')[0]);
   const apiUrl = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=' + new Date(date).toISOString().split('T')[0];
 // Make a GET request
 fetch(apiUrl)
