@@ -1,11 +1,11 @@
 const urlParams = new URLSearchParams(window.location.search);
-var date = urlParams.get('date');
+var paramdate = new Date(urlParams.get('date'));
 const todayDate = new Date();
-if (date == null) {
-  date = new Date(todayDate);
+if (paramdate == null) {
+  paramdate = new Date(todayDate);
 }
 
-function updateinfo(date) {
+function updateinfo(paramdate) {
 
     // Define the API URL
   window.history.pushState("", "title", "/kata-APOD/index.html?date=" + new Date(date).toISOString().split('T')[0]);
@@ -37,7 +37,7 @@ fetch(apiUrl)
     btn = document.getElementById("LA");
     console.log(btn)
       btn.addEventListener("click", previousDay);
-      if (date < todayDate) {
+      if (paramdate < todayDate) {
         document.getElementById("RA").style.display = 'inline';
       }
       else {
@@ -60,11 +60,11 @@ fetch(apiUrl)
 }
 
 function previousDay() {
-  date.setDate(date.getDate() - 1);
-  updateinfo(date);
+  paramdate.setDate(paramdate.getDate() - 1);
+  updateinfo(paramdate);
 }
 function tomorrowDay() {
-  date.setDate(date.getDate() + 1);
-  updateinfo(date)
+  paramdate.setDate(paramdate.getDate() + 1);
+  updateinfo(paramdate)
 }
-updateinfo(date);
+updateinfo(paramdate);
