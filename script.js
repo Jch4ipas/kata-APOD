@@ -1,15 +1,33 @@
 const urlParams = new URLSearchParams(window.location.search);
 var paramdate = new Date(urlParams.get('date'));
+var APIKEYALREADYINSERT
 const todayDate = new Date();
 if (paramdate == null) {
   paramdate = new Date(todayDate);
 }
 
+function APIKEYINSERT() {
+  let text;
+  APIKEYALREADYINSERT = prompt("Please enter your API key:", "");
+  if (APIKEYALREADYINSERT == null || APIKEYALREADYINSERT == "") {
+    text = "User cancelled the prompt.";
+  } else {
+    console.log(APIKEYALREADYINSERT);
+    localStorage.setItem('APIKEY', APIKEYALREADYINSERT)
+    updateinfo(APIKEYALREADYINSERT)
+
+  }
+}
+
+
+
+
+
 function updateinfo(paramdate) {
 
     // Define the API URL
   window.history.pushState("", "title", "/kata-APOD/index.html?date=" + new Date(date).toISOString().split('T')[0]);
-  const apiUrl = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=' + new Date(date).toISOString().split('T')[0];
+  const apiUrl = 'https://api.nasa.gov/planetary/apod?api_key=' + localStorage.getItem('APIKEY') + '&date=' + new Date(paramdate).toISOString().split('T')[0];
 // Make a GET request
 fetch(apiUrl)
   .then(response => {
