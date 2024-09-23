@@ -2,7 +2,7 @@ const urlParams = new URLSearchParams(window.location.search);
 var paramdate = new Date(urlParams.get('date'));
 var APIKEYALREADYINSERT
 const todayDate = new Date();
-if (paramdate == null) {
+if (paramdate == 'Thu Jan 01 1970 01:00:00 GMT+0100 (Central European Standard Time)' ){
   paramdate = new Date(todayDate);
 }
 
