@@ -63,30 +63,30 @@ n'est qu'un moyen parmis beaucoup d'autres.
 
 ## Fonctionnalités attendues / checklist
 
-- [ ] La page a un titre
-- [ ] La page a un pied de page, avec au moins un lien vers le dépôt de code
-- [ ] Le titre de l'APOD est présent
-- [ ] La date de l'APOD est présente
-- [ ] La description de l'APOD est présente
-- [ ] Le copyright de l'APOD est présent ([info](https://github.com/nasa/apod-api#copyright))
-- [ ] Le média est affiché. Il peut s'agir :
-  - [ ] D'une image, qui offrira un lien vers sa version HD
-  - [ ] D'une vidéo, qui offrira un player pour la visionner
-- [ ] Des boutons suivant et précédent sont présents
-- [ ] Le bouton précédent est un lien vers l'image du jour précédent
-- [ ] Le bouton suivant est un lien vers l'image du lendemain, mais n'est pas  
+- [x] La page a un titre
+- [x] La page a un pied de page, avec au moins un lien vers le dépôt de code
+- [x] Le titre de l'APOD est présent
+- [x] La date de l'APOD est présente
+- [x] La description de l'APOD est présente
+- [x] Le copyright de l'APOD est présent ([info](https://github.com/nasa/apod-api#copyright))
+- [x] Le média est affiché. Il peut s'agir :
+  - [x] D'une image, qui offrira un lien vers sa version HD
+  - [x] D'une vidéo, qui offrira un player pour la visionner
+- [x] Des boutons suivant et précédent sont présents
+- [x] Le bouton précédent est un lien vers l'image du jour précédent
+- [x] Le bouton suivant est un lien vers l'image du lendemain, mais n'est pas  
       cliquable si l'APOD est celui d'aujourd'hui
-- [ ] Les balises [meta](https://developer.mozilla.org/fr/docs/Web/HTML/Element/meta)
+- [X] Les balises [meta](https://developer.mozilla.org/fr/docs/Web/HTML/Element/meta)
       et `<title>` sont renseignées dans le `<head>` de la page HTML
 
 ### Bonus
 
-- [ ] l'application est disponible en ligne, par exemple sur
+- [x] l'application est disponible en ligne, par exemple sur
       [GitHub pages](https://pages.github.com/)
-- [ ] l'application offre la possibilité de gérer la clé d'API  
+- [X] l'application offre la possibilité de gérer la clé d'API  
       (l'utilisateur peut mettre sa propre clé plutôt que DEMO_KEY)
-- [ ] il est possible de copie l'URL d'un APOD (avec la date d'un jour spécific)
-- [ ] il est possible d'accéder à l'APOD d'une date définie en la spécifiant dans l'URL 
+- [x] il est possible de copie l'URL d'un APOD (avec la date d'un jour spécific)
+- [x] il est possible d'accéder à l'APOD d'une date définie en la spécifiant dans l'URL 
 
 ### Et pour finir
 
