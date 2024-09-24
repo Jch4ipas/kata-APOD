@@ -2,6 +2,8 @@ const urlParams = new URLSearchParams(window.location.search);
 var paramdate = new Date(urlParams.get('date'));
 var APIKEYALREADYINSERT
 const todayDate = new Date();
+todayDate.toLocaleDateString();
+console.log(todayDate);
 if (paramdate == 'Thu Jan 01 1970 01:00:00 GMT+0100 (Central European Standard Time)' ){
   paramdate = new Date(todayDate);
 }
@@ -47,10 +49,12 @@ fetch(apiUrl)
         document.getElementById("media-image").style.display = 'block';
     }
     let btn = document.getElementById("LA");
-    btn = document.getElementById("LA");
-    console.log(btn)
       btn.addEventListener("click", previousDay);
-      if (paramdate < todayDate) {
+      let btn1 = document.getElementById("RA");
+      btn1.addEventListener("click", tomorrowDay);
+
+      //ne pas afficher le bouton pour le prochain jour si on est sur le jour actuelle
+      if (paramdate.toLocaleDateString() < todayDate.toLocaleDateString()) {
         document.getElementById("RA").style.display = 'inline';
       }
       else {
