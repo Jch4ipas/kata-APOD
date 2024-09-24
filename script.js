@@ -6,17 +6,12 @@ if (paramdate == 'Thu Jan 01 1970 01:00:00 GMT+0100 (Central European Standard T
   paramdate = new Date(todayDate);
 }
 
+// endroit où inséré clé api
 function APIKEYINSERT() {
-  let text;
-  APIKEYALREADYINSERT = prompt("Please enter your API key:", "");
-  if (APIKEYALREADYINSERT == null || APIKEYALREADYINSERT == "") {
-    text = "User cancelled the prompt.";
-  } else {
-    console.log(APIKEYALREADYINSERT);
+  var APIKEYALREADYINSERT = document.getElementById("apikeyinput").value;
     localStorage.setItem('APIKEY', APIKEYALREADYINSERT)
-    updateinfo(APIKEYALREADYINSERT)
-
-  }
+  document.location.href="/kata-APOD/"; 
+  console.log(APIKEYALREADYINSERT)
 }
 
 
